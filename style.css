@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Roboto+Slab:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Libre Bodoni", serif;
+    font-optical-sizing: auto;
+    background:linear-gradient(to right,#041308,#0b3317);
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    padding: 30px;
+    height: 100vh;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.left-text{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+}
+.left-text h1{
+    font-size: 3rem;
+}
+.left-text p{
+    font-size: 1.3rem;
+}
+.gallery{
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 120px;
+    gap: 7px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    background: #222;
+    background-size: cover;
+    background-position: top;
+    background-blend-mode: hard-light;
+    transition: all 1s ease-in-out;
+}
+
+.box:hover{
+    background-blend-mode: lighten;
+    background-position: center;
+    box-shadow: 0 0 10px white;
+    cursor: pointer;
+}
+.box:nth-child(1):hover{
+    background-position: bottom !important;
+}
+.box:nth-child(4):hover{
+    background-position: bottom !important;
+}
+
+.row-2{
+    grid-row: span 2;
+}
+
+.col-2{
+    grid-column: span 2;
+}
+
+@media screen and (max-width:991px) {
+    .container{
+        padding: 0px;
+    }
+}
+@media screen and (max-width:768px) {
+    .container{
+        flex-direction: column;
+        padding: 50px;
+        gap: 30px;
+        justify-content: space-evenly;
+    }
+    .left-text{
+        width: 100%;
+        text-align: center;
+    }
+
+    .gallery{
+        width: 100%;
+        grid-auto-rows: 100px;
+    }
+}
+@media screen and (max-width:461px) {
+    .container{
+        padding: 20px;
+    }
+    .left-text{
+        padding:20px 10px;
+    }
+    .left-text h1{
+        font-size: 2rem;
+    }
+    .left-text p{
+        font-size: 1.2rem;
+    }
+
+    .gallery{
+        grid-auto-rows: 200px;
+    }
+
+    .box{
+        grid-row: span 1;
+        grid-column: span 3;
+    }
+}
